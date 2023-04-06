@@ -1,0 +1,4 @@
+INDEX VERSION 1.132+D:\Cybersoft_Academy\LapTrinhNen\eclipse-workspace\.metadata\.plugins\org.eclipse.jdt.core
+2380175872.index
+1865797976.index
+718225619.index

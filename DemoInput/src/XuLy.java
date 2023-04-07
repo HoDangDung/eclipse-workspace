@@ -4,10 +4,15 @@ public class XuLy {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("Demo lệnh nhập");
 		Scanner scan = new Scanner(System.in);
-		System.out.print("Vui lòng nhập vào một số: ");
-		String chuoi = scan.nextLine();
-		System.out.println("Số bạn vừa nhập là \t" + Integer.parseInt(chuoi));
+		System.out.print("Nhập vào số thực thứ nhất: ");
+		String value1 = scan.nextLine();
+		System.out.print("Nhập vào số thực thứ hai: ");
+		String value2 = scan.nextLine();
+		
+		double num1= Double.parseDouble(value1), 
+					num2 = Double.parseDouble(value2);
+		double tong = num1 + num2;
+		System.out.println("Tổng là: " + tong);
 	}
 }

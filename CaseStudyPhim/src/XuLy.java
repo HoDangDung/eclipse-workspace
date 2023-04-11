@@ -4,6 +4,7 @@ public class XuLy {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		final String space = "%-50s";
 
 		// Đầu vào: tên phim giá vé người lớn giá vé trẻ em số vé người lớn đã bán số vé
 		// trẻ em đã bán % tiền từ thiện.
@@ -36,7 +37,7 @@ public class XuLy {
 		// Tính tiền trích từ thiện: tongThu * phanTramTuThien = tuThien
 
 		// Tính tiền còn lại: tongThu - tuThien = conLai
-
+		
 		Scanner scan = new Scanner(System.in);
 		String tenPhim;
 		int giaVeLon, giaVeEm, soVeLon, soVeEm, phanTramTuThien;
@@ -61,21 +62,33 @@ public class XuLy {
 		phanTramTuThien = Integer.parseInt(scan.nextLine());
 
 		doanhThu = giaVeEm * soVeEm + giaVeLon * soVeLon;
+		
 		tuThien = (float) phanTramTuThien / 100 * doanhThu;
 //		tuThien = doanhThu * phanTramTuThien / 100;
+		
 		conLai = doanhThu - tuThien;
-
+		
+		String text;
 		System.out.println();
-		System.out.println("_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*");
-		System.out.println();
+		text = String.format(space, " ").replace(" ", "-*");
+		System.out.println(text+"-*");
 
-		System.out.println("Tên phim: " + "\t" + tenPhim);
-		System.out.println("Số vé đã bán: " + "\t" + (soVeEm + soVeLon));
-		System.out.println("Doanh thu: " + "\t" + doanhThu + " VNĐ");
-		System.out.println("Trích phần % từ thiện: " + "\t" + phanTramTuThien + "%");
-		System.out.println("Tổng tiền trích từ thiện: " + "\t" + tuThien + " VNĐ");
-		System.out.println("Tổng thu được sau khi trừ: " + "\t" + conLai + " VNĐ");
-
-		System.out.println((float) phanTramTuThien / 100);
+		text = String.format(space, "Tên-phim:").replace(' ', '.').replace('-', ' ');
+		System.out.println(text + tenPhim);
+		
+		text = String.format(space, "Số-vé-đã-bán:").replace(' ', '.').replace('-', ' ');
+		System.out.println(text + (soVeEm + soVeLon));
+		
+		text = String.format(space, "Doanh-thu:").replace(' ', '.').replace('-', ' ');
+		System.out.println(text + doanhThu + " VNĐ");
+		
+		text = String.format(space, "Trích-phần-%-từ-thiện:").replace(' ', '.').replace('-', ' ');
+		System.out.println(text + phanTramTuThien + "%");
+		
+		text = String.format(space, "Tổng-tiền-trích-từ-thiện:").replace(' ', '.').replace('-', ' ');
+		System.out.println(text + tuThien + " VNĐ");
+		
+		text = String.format(space, "Tổng-thu-được-sau-khi-trừ:").replace(' ', '.').replace('-', ' ');
+		System.out.println(text + conLai + " VNĐ");
 	}
 }

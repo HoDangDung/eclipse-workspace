@@ -14,4 +14,5 @@ public class XuLy {
 		sum = hundred + unit + ten;
 		System.out.println("Tổng của " + n + " -> " + hundred + " + " + ten + " + " + unit + " = " + sum);
 	}
+
 }

@@ -1,0 +1,65 @@
+import java.util.*;
+
+public class ThueCaNhan {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// Đầu vào: Họ tên, tổng thu nhập năm, số người phụ thuộc
+
+		// Xử lý: Tạo hàm nhập thông tin cá nhân
+		// - Kiểm tra dữ liệu nhập vào:
+		// + Tổng thu nhập năm > 0
+		// + Số người phụ thuộc > 0
+		// + Not null (Họ tên, tổng thu nhập năm, số người phụ thuộc)
+		// Tạo hàm tính Thu nhập chịu thuế:
+		// - Thu nhập chịu thuế = tổng thu nhập năm - 4tr - Số người phụ thuộc * 1.6tr
+
+		// Đầu ra: Thuế thu thập cá nhân
+
+//		  Dummy data: + Thu nhập chịu thuế: 120 (triệu) - 4 (triệu) - 6 * 1.6 (triệu) = 106.4 (triệu) 15%
+//		+ Thu nhập chịu thuế: 650 (triệu) - 4 (triệu) - 6 * 1.6 (triệu) = 636.4 (triệu) 30%
+
+		Scanner scan = new Scanner(System.in);
+		thongTinCaNhan(scan);
+	}
+
+	public static void thongTinCaNhan(Scanner scan) {
+		String name = "";
+		float thuNhap = 1.0f;
+		byte soNguoiPhuThuoc;
+
+		System.out.print("Nhập họ tên: ");
+		name = scan.nextLine();
+
+		System.out.print("Nhập tổng thu nhập năm (triệu): ");
+		thuNhap = Float.parseFloat(scan.nextLine());
+
+		System.out.print("Nhập số người phụ thuộc: ");
+		soNguoiPhuThuoc = Byte.parseByte(scan.nextLine());
+		System.out.println("*********** THUẾ THU NHẬP CÁ NHÂN *************");
+		System.out.println(name + "\n" + thuNhap + "\n" + soNguoiPhuThuoc);
+		thuNhap = thuNhapChiuThue(thuNhap, soNguoiPhuThuoc);
+	}
+
+	public static float thuNhapChiuThue(float thuNhap, byte soNguoiPhuThuoc) {
+		float thuNhapChiuThue = 1.0f;
+		thuNhapChiuThue = thuNhap - 4 - (float) (soNguoiPhuThuoc * 1.6);
+		if (thuNhapChiuThue > 960) {
+			System.out.println("Thuế suất 35%");
+		} else if (thuNhapChiuThue > 624) {
+			System.out.println("Thuế suất 30%");
+		} else if (thuNhapChiuThue > 384) {
+			System.out.println("Thuế suất 25%");
+		} else if (thuNhapChiuThue > 210) {
+			System.out.println("Thuế suất 20%");
+		} else if (thuNhapChiuThue > 120) {
+			System.out.println("Thuế suất 15%");
+		} else if (thuNhapChiuThue > 60) {
+			System.out.println("Thuế suất 10%");
+		} else {
+			System.out.println("Thuế suất 5%");
+		}
+		return thuNhapChiuThue;
+	}
+
+}

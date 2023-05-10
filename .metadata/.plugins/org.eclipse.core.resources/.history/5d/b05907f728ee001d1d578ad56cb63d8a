@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class XuLy {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+		float tong = tinhTongKhongAmCach1(scan);
+		System.out.println(tong);
+	}
+
+	public static float tinhTongKhongAmCach1(Scanner scan) {
+		float tong = 0; // Tạo biến tích lũy ngoài vòng lặp
+		int nhap = 1;
+		while (nhap > 1) {
+			System.out.print("Hãy nhập vào số > 0. Nhập <= 0 để dừng:");
+			nhap = Integer.parseInt(scan.nextLine());
+			if (nhap > 0) {
+				tong += nhap;
+			}
+		}
+
+		return tong;
+	}
+
+}

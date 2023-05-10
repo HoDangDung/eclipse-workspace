@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class XuLy {
+
+	public static int timSoLonNhat
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		Đầu vào: nhập vào 3 số a, b, c
+//
+//		Xử lý: tạo biến a, b, c, max, flag
+//			In thông báo nhập số a
+//			Cho người dùng nhập vào và gán cho biến a
+//			
+//			In thông báo nhập số b
+//			Cho người dùng nhập vào và gán cho biến b
+//			
+//			In thông báo nhập số c
+//			Cho người dùng nhập vào và gán cho biến c
+//
+//			Kiểm tra người dùng nhập null thì flag = false
+//
+//			Xét: 
+//			+ Nếu a > b && a > c -> max = a
+//			+ Nếu b > c & b > max -> max = b
+//			+ Nếu c > a && c > max -> max = c
+//
+//		Đầu ra: số lớn nhất
+	}
+
+}

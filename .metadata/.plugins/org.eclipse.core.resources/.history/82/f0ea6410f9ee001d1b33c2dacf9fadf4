@@ -1,0 +1,120 @@
+import java.util.*;
+
+public class XuLy {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+// Tạo hàm cho hiển thị lựa chọn
+// Sử dụng kỹ thuật cờ hiệu
+// Tạo biến "Chon" người dùng chon
+// Tạo vòng lặp
+// In menu
+// Cho nhập lựa chọn
+// switch...case các lựa chọn và xử lý tương ứng
+// Bật biến thoát
+		Scanner scan = new Scanner(System.in);
+		nhapLuaChon(scan);
+	}
+
+	public static byte inMenu(Scanner scan) {
+		System.out.println("1: Tính tổng");
+		System.out.println("2: Tính hiệu");
+		System.out.println("3: Tính nhân");
+		System.out.println("4: Tính chia");
+		System.out.println("0: Thoát");
+		System.out.print("Mời nhập lựa chọn: ");
+		byte chon = Byte.parseByte(scan.nextLine());
+		return chon;
+	}
+
+	public static List<Integer> nhapGiaTri(Scanner scan) {
+		List<Integer> arr = new ArrayList<Integer>();
+		int num;
+		boolean stop = false;
+		System.out.print("Mời nhập giá trị: ");
+		do {
+			num = Integer.parseInt(scan.nextLine());
+			arr.add(num);
+			if (num == 0) {
+				stop = true;
+			} else {
+				stop = false;
+			}
+		} while (!stop);
+		return arr.subList(num, arr.size() - 1);
+	}
+
+	public static void nhapLuaChon(Scanner scan) {
+		boolean thoat = false;
+		List<Integer> arr = new ArrayList<>();
+		do {
+			byte chon = inMenu(scan);
+			if (chon == 0) {
+				thoat = true;
+			} else {
+				arr = nhapGiaTri(scan);
+			}
+			switch (chon) {
+			case 1:
+				tinhTong(arr);
+				break;
+			case 2:
+				tinhHieu(arr);
+				break;
+			case 3:
+				tinhNhan(arr);
+				break;
+			case 4:
+				tinhChia(arr);
+				break;
+			case 0:
+				System.out.print("Thoát chương trình thành công !!!!");
+				break;
+			default:
+				System.out.println("Vui lòng chọn đúng menu.");
+			}
+		} while (!thoat);
+	}
+
+	private static void tinhChia(List<Integer> arr) {
+		// TODO Auto-generated method stub
+		int sum = 1;
+		for (int i = 0; i < arr.size() - 1; i++) {
+			sum /= arr.get(i);
+			System.out.println(sum);
+		}
+		System.out.println("Tổng của " + arr + " là: " + sum);
+	}
+
+	private static void tinhNhan(List<Integer> arr) {
+		// TODO Auto-generated method stub
+		int sum = 1;
+		for (int i = 0; i < arr.size() - 1; i++) {
+			sum *= arr.get(i);
+		}
+		System.out.println("Tổng của " + arr + " là: " + sum);
+	}
+
+	private static void tinhHieu(List<Integer> arr) {
+		// TODO Auto-generated method stub
+		int sum = arr.get(0);
+		for (int i = 0; i < arr.size() - 1; i++) {
+			if (arr.get(i + 1) <= arr.size() - 1) {
+				sum -= arr.get(i + 1);
+				System.out.println(i);
+			} else {
+				System.out.println("Tổng của " + arr + " là: " + sum);
+				return;
+			}
+		}
+	}
+
+	private static void tinhTong(List<Integer> arr) {
+		// TODO Auto-generated method stub
+		int sum = 0;
+		for (int i = 0; i <= arr.size() - 1; i++) {
+			sum += arr.get(i);
+		}
+		System.out.println("Tổng của " + arr + " là: " + sum);
+	}
+}

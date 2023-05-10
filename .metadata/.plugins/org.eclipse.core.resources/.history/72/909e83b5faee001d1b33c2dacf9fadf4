@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class XuLy {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner scan = new Scanner(System.in);
+doanSo(scan);
+	}
+
+	public static void doanSo(Scanner scan) {
+		int soBiMat = (int) (Math.random() * 99 + 1), nhap;
+		do {
+			System.out.println("Vui lòng nhập vào một số: ");
+			nhap = Integer.parseInt(scan.nextLine());
+			if (nhap < soBiMat) {
+				System.out.println("Vui lòng nhập số Lớn hơn");
+			} else if (nhap > soBiMat) {
+				System.out.println("Vui lòng nhập số Bé hơn");
+			}
+		} while (soBiMat != nhap);
+	}
+
+}

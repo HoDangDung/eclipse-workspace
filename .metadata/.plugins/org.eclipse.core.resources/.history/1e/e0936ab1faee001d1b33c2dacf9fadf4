@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class XuLy {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	public static void doanSo(Scanner scan) {
+		int soBiMat = (int) (Math.random() * 99 + 1), nhap;
+		do {
+			System.out.println("Vui lòng nhập vào một số: ");
+			nhap = Integer.parseInt(scan.nextLine());
+		} while (soBiMat != nhap);
+	}
+
+}

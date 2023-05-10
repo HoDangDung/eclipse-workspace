@@ -1,0 +1,96 @@
+import java.util.*;
+
+public class QLSV {
+
+	public static float khuVuc(char khuVuc) {
+		float diem = 0.0f;
+		switch (khuVuc) {
+		case 'A':
+		case 'a':
+			diem = 2;
+			break;
+		case 'B':
+		case 'b':
+			diem = 1;
+			break;
+		case 'C':
+		case 'c':
+			diem = 0.5f;
+			break;
+		default:
+			break;
+		}
+		return diem;
+	}
+
+	public static float doiTuong(byte doiTuong) {
+		float diem = 0.0f;
+
+		switch (doiTuong) {
+		case 1:
+			diem = 2.5f;
+			break;
+		case 2:
+			diem = 1.5f;
+			break;
+		case 3:
+			diem = 1f;
+			break;
+		default:
+			break;
+		}
+		return diem;
+	}
+
+	public static float tinhDiem(float toan, float ly, float hoa) {
+		float tongdiem = 1.0f;
+
+		tongdiem = (toan + ly + hoa) / 3;
+
+		if (toan == 0 || ly == 0 || hoa == 0) {
+			System.out.println("Rớt vì có môn bằng 0");
+		}
+
+		if (tongdiem >= 5) {
+			System.out.println("Đậu");
+		} else {
+			System.out.println("Rớt vì tổng điểm " + tongdiem + " < 5");
+		}
+		return tongdiem;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//		Đầu vào: điểm của 3 môn thi, khu vực và đối tượng dự thi
+//
+//		Xử lý: Viết hàm chọn khu vực
+//		 	Viết hàm chọn đối tượng
+//		Viết hàm tính điểm 3 môn thi kiểu float
+//		Cho người dùng nhập điểm 3 môn
+//		Kiểm tra nếu có môn học = 0 -> rớt
+//		Tổng điểm: điểm 3 môn + khu vực + đối tượng
+//
+//		Đầu ra: Thông báo kết quả và tổng số điểm đạt đc
+
+		Scanner scan = new Scanner(System.in);
+		float toan, ly, hoa;
+		System.out.print("Nhập điểm Toán: ");
+		toan = Float.parseFloat(scan.nextLine());
+		System.out.print("Nhập điểm Lý: ");
+		ly = Float.parseFloat(scan.nextLine());
+		System.out.print("Nhập điểm Hóa: ");
+		hoa = Float.parseFloat(scan.nextLine());
+		
+
+		System.out.print("Chọn đối tượng (1 | 2 | 3): ");
+		byte doiTuong = Byte.parseByte(scan.nextLine());
+
+		System.out.print("Chọn khu vực (A | B | C): ");
+		char khuVuc = scan.next().charAt(0);
+
+		System.out.println("Đối tượng " + doiTuong + " điểm: " + doiTuong(doiTuong));
+		System.out.println("Khu vực " + khuVuc + " điểm: " + khuVuc(khuVuc));
+	System.out.println("Tổng điểm: " tinhDiem(toan, ly, hoa));
+	}
+
+}
